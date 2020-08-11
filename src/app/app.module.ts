@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import { AboutComponent } from './about/about.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { SkillsComponent } from './skills/skills.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    ExperienceComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

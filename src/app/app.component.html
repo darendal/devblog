@@ -16,16 +16,19 @@
       <hr/>
       <div class="nav-links dark-theme">
         <mat-nav-list>
-          <mat-list-item>About</mat-list-item>
-          <mat-list-item>Experience</mat-list-item>
-          <mat-list-item>Skills</mat-list-item>
-          <mat-list-item>Posts</mat-list-item>
+          <a mat-list-item
+             *ngFor="let link of navLinks"
+             [routerLink]="link.path"
+             [routerLinkActive]="'active'"
+             [routerLinkActiveOptions]="{exact: true}"
+          >
+            <span>{{link.label}}</span>
+          </a>
         </mat-nav-list>
       </div>
     </mat-sidenav>
-
     <mat-sidenav-content>
-      <h1>Test</h1>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
