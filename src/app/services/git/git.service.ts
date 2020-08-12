@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {flatMap, mergeMap, reduce} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {flatMap, mergeMap, reduce} from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 const username = 'darendal';
 const rootURL = 'https://api.github.com';
-const fetchRepos = `${rootURL}/users/${username}/repos`
-const getLanguageStats = `${rootURL}/repos/${username}/`
+const fetchRepos = `${rootURL}/users/${username}/repos`;
+const getLanguageStats = `${rootURL}/repos/${username}/`;
 
 const Stats =  new Map([
-  ["TypeScript", 462228], ["HTML", 60997], ["Dart", 4431], ["JavaScript", 31817], ["CSS", 67271], ["Java", 60222], ["C#", 386951], ["ASP", 221], ["Shell", 4314], ["Rust", 33635]
-])
+  ['TypeScript', 462228],
+  ['HTML', 60997],
+  ['Dart', 4431],
+  ['JavaScript', 31817],
+  ['CSS', 67271],
+  ['Java', 60222],
+  ['C#', 386951],
+  ['ASP', 221],
+  ['Shell', 4314],
+  ['Rust', 33635]
+]);
 
 export interface Owner {
   login: string;
@@ -116,30 +125,30 @@ export class GitService {
 
   gitStats: Map<string, number> = Stats;
 
-  constructor(private http: HttpClient,) {}
+  constructor(private http: HttpClient, ) {}
 
   getStats(): Observable<Map<string, number>> {
 
-    return of(this.gitStats)
+    return of(this.gitStats);
 
-    let resp = this.http.get<Repo[]>(fetchRepos).pipe(
+    const resp = this.http.get<Repo[]>(fetchRepos).pipe(
       flatMap(r => r),
-      mergeMap((repo: Repo) => this.http.get<Map<string,number>>(`${getLanguageStats}${repo.name}/languages`)),
-      reduce((acc: Map<string, number>,y: Map<string, number>) => {
-        for(let key of Array.from( Object.keys(y)) ) {
+      mergeMap((repo: Repo) => this.http.get<Map<string, number>>(`${getLanguageStats}${repo.name}/languages`)),
+      reduce((acc: Map<string, number>, y: Map<string, number>) => {
+        for (const key of Array.from( Object.keys(y)) ) {
 
           let existing = acc[key];
           let newVal = y[key];
 
-          existing = existing ? existing : 0
-          newVal = newVal ? newVal : 0
+          existing = existing ? existing : 0;
+          newVal = newVal ? newVal : 0;
 
           acc[key] = newVal + existing;
         }
         return acc;
       })
-    )
-    resp.subscribe((response: Map<string, number>) => this.gitStats = response)
+    );
+    resp.subscribe((response: Map<string, number>) => this.gitStats = response);
     return resp;
   }
 

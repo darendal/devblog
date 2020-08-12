@@ -13,6 +13,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {FlexModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import { GitchartComponent } from './gitchart/gitchart.component';
+import {NgxEchartsModule} from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { GitchartComponent } from './gitchart/gitchart.component';
         MatSidenavModule,
         MatListModule,
         MatDividerModule,
-        FlexModule
+        FlexModule,
+        NgxEchartsModule.forRoot({
+          echarts: () => import('echarts')
+        })
     ],
   providers: [],
   bootstrap: [AppComponent]

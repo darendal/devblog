@@ -1,6 +1,6 @@
-<div>
-
-  <button (click)="test()">Git stats</button>
-
-
+<div class="chart" fxLayout="column" fxLayoutAlign="start center" fxFill>
+  <div fxFlex="10">
+    <p>GitHub Language Breakdown</p>
+  </div>
+  <div fxFlex="90" echarts [options]="asyncOptions|async" class="chart"></div>
 </div>
