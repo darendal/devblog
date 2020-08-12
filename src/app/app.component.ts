@@ -12,10 +12,7 @@ export class AppComponent {
     {path: 'about', label: 'About', isActive: true},
     {path: 'experience', label: 'Experience', isActive: false},
     {path: 'skills', label: 'Skills', isActive: false}
-  ]
+  ];
 
-  test() {
-    console.log(this.navLinks)
-  }
 }
 
