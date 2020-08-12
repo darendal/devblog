@@ -27,8 +27,10 @@
         </mat-nav-list>
       </div>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
+    <mat-sidenav-content fxFill>
+      <div fxFlex class="content">
+        <router-outlet class="hidden-router"></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
 import {MatDividerModule} from "@angular/material/divider";
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -18,14 +19,15 @@ import {MatDividerModule} from "@angular/material/divider";
     ExperienceComponent,
     SkillsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDividerModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDividerModule,
+        FlexModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
