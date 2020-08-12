@@ -12,13 +12,15 @@ import { SkillsComponent } from './skills/skills.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {FlexModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
+import { GitchartComponent } from './gitchart/gitchart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ExperienceComponent,
-    SkillsComponent
+    SkillsComponent,
+    GitchartComponent
   ],
     imports: [
         BrowserModule,
