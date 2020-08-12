@@ -10,7 +10,6 @@ import {Observable, of} from 'rxjs';
 })
 export class GitchartComponent implements OnInit {
 
-
   options = {
     tooltip: {
       trigger: 'item',
