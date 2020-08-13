@@ -16,6 +16,7 @@ import { GitchartComponent } from './gitchart/gitchart.component';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -25,21 +26,22 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     SkillsComponent,
     GitchartComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatSidenavModule,
-        MatListModule,
-        MatDividerModule,
-        MatIconModule,
-        MatTooltipModule,
-        FlexModule,
-        NgxEchartsModule.forRoot({
-          echarts: () => import('echarts')
-        })
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
+    MatTooltipModule,
+    FlexModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
+import {Logo} from "../models/Logo";
 
 const logos : Logo[] = [
   {id: 'angular', filename: 'angular.svg'},
@@ -59,9 +60,4 @@ export class SkillsComponent implements OnInit {
     ));
   }
 
-}
-
-export interface Logo {
-  id: string,
-  filename: string
 }
