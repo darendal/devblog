@@ -14,9 +14,9 @@ import {FlexModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import { GitchartComponent } from './gitchart/gitchart.component';
 import {NgxEchartsModule} from 'ngx-echarts';
-import {MatIconModule} from "@angular/material/icon";
-import {MatTooltipModule} from "@angular/material/tooltip";
-import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [

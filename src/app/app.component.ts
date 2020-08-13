@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import {MatIconRegistry} from "@angular/material/icon";
-import {DomSanitizer} from "@angular/platform-browser";
-import {Logo} from "./models/Logo";
+import {Component, OnInit} from '@angular/core';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
+import {Logo} from './models/Logo';
 
 export interface LinkLogo extends Logo {
-  link: string
+  link: string;
 }
 
 @Component({
@@ -12,13 +12,13 @@ export interface LinkLogo extends Logo {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   logos: LinkLogo[] = [
-    {id: 'linkedin', filename:'linkedin.svg', link: 'https://www.linkedin.com/in/brendanrware/'},
-    {id: 'stack_overflow', filename:'stack_overflow.svg', link: 'https://stackoverflow.com/users/2442295/darendal'},
-    {id: 'github', filename:'github.svg', link: 'https://github.com/darendal'},
-  ]
+    {id: 'linkedin', filename: 'linkedin.svg', link: 'https://www.linkedin.com/in/brendanrware/'},
+    {id: 'stack_overflow', filename: 'stack_overflow.svg', link: 'https://stackoverflow.com/users/2442295/darendal'},
+    {id: 'github', filename: 'github.svg', link: 'https://github.com/darendal'},
+  ];
 
   title = 'devblog';
 

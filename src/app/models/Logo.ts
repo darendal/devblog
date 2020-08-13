@@ -1,4 +1,4 @@
 export interface Logo {
-  id: string,
-  filename: string
+  id: string;
+  filename: string;
 }

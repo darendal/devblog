@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MatIconRegistry} from "@angular/material/icon";
-import {DomSanitizer} from "@angular/platform-browser";
-import {Logo} from "../models/Logo";
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
+import {Logo} from '../models/Logo';
 
-const logos : Logo[] = [
+const logos: Logo[] = [
   {id: 'angular', filename: 'angular.svg'},
   {id: 'c++', filename: 'C++-01.svg'},
   {id: 'c-sharp', filename: 'C-Sharp-01.svg'},
@@ -19,7 +19,7 @@ const logos : Logo[] = [
   {id: 'rust', filename: 'rust.svg'},
   {id: 'typescript', filename: 'typescript.svg'},
   {id: 'go', filename: 'go.svg'},
-]
+];
 
 @Component({
   selector: 'app-skills',
@@ -38,7 +38,7 @@ export class SkillsComponent implements OnInit {
     'typescript',
     'javascript',
     'html',
-  ]
+  ];
 
   frameworks: string[] = [
     'angular',
@@ -47,7 +47,7 @@ export class SkillsComponent implements OnInit {
     'firebase',
     'docker',
     'postgres'
-  ]
+  ];
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) { }
