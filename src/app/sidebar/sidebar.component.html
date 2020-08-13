@@ -1,0 +1,26 @@
+<div>
+  <div class="identity">
+    <img alt="logo" src="/assets/logo1.png" class="logo">
+    <p class="title">Brendan Ware</p>
+    <p class="tagline">Fullstack developer, currently working on device security</p>
+    <div class="connect">
+      <a mat-icon-button *ngFor="let l of logos" href="{{l.link}}">
+        <mat-icon svgIcon="{{l.id}}"></mat-icon>
+      </a>
+    </div>
+  </div>
+  <hr/>
+  <div class="nav-links dark-theme">
+    <mat-nav-list>
+      <a mat-list-item
+         *ngFor="let link of this.routes"
+         [routerLink]="link.path"
+         [routerLinkActive]="'active'"
+         [routerLinkActiveOptions]="{exact: true}"
+      >
+        <span>{{link.label}}</span>
+      </a>
+    </mat-nav-list>
+  </div>
+</div>
+

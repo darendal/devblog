@@ -1,0 +1,62 @@
+.example-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background: #27282b;
+  color: white !important;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+.logo {
+  max-width: 8rem;
+}
+
+.identity {
+  text-align: center;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.title {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: #cccf;
+}
+
+.connect {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+svg {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  max-width: 30px;
+  max-height: 30px;
+  padding: 10px;
+}
+
+.mat-nav-list a.active {
+  color: white;
+  font-size: larger;
+}
+
+.mat-nav-list a.active span {
+  border-bottom-width: 2.5px;
+  border-bottom-style: inset;
+  border-bottom-color: dodgerblue;
+}
+
+.mat-nav-list a {
+  color: #bcbaba;
+}

@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Logo} from './models/Logo';
-
-export interface LinkLogo extends Logo {
-  link: string;
-}
+import {NavLink} from "./models/NavLink";
+import {LinkLogo} from "./models/LinkLogo";
 
 @Component({
   selector: 'app-root',
@@ -22,12 +19,11 @@ export class AppComponent implements OnInit {
 
   title = 'devblog';
 
-  navLinks = [
+  navLinks: NavLink[] = [
     {path: 'about', label: 'About', isActive: true},
     {path: 'experience', label: 'Experience', isActive: false},
     {path: 'skills', label: 'Skills', isActive: false}
   ];
-
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) { }

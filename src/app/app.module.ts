@@ -17,6 +17,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     AboutComponent,
     ExperienceComponent,
     SkillsComponent,
-    GitchartComponent
+    GitchartComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
