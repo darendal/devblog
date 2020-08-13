@@ -7,13 +7,13 @@
         <div fxFlex="">
           <h2 class="mat-title">Languages</h2>
           <div fxLayout="row" class="skill-icons">
-            <mat-icon *ngFor="let l of this.languages" svgIcon="{{l}}" matTooltip="{{l}}" fxFlex=""></mat-icon>
+            <mat-icon *ngFor="let l of this.languages" svgIcon="{{l}}" matTooltip="{{l | titlecase}}" fxFlex=""></mat-icon>
           </div>
         </div>
         <div fxFlex="">
           <h2>Tools and Frameworks</h2>
           <div fxLayout="row" class="skill-icons">
-            <mat-icon *ngFor="let l of this.frameworks" svgIcon="{{l}}" matTooltip="{{l}}" fxFlex=""></mat-icon>
+            <mat-icon *ngFor="let l of this.frameworks" svgIcon="{{l}}" matTooltip="{{l | titlecase}}" fxFlex=""></mat-icon>
           </div>
         </div>
         <div fxFlex="">
