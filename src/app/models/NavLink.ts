@@ -1,5 +1,5 @@
 export interface NavLink {
-  path: string,
-  label: string,
-  isActive: boolean
+  path: string;
+  label: string;
+  isActive: boolean;
 }

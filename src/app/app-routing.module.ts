@@ -6,9 +6,9 @@ import {SkillsComponent} from './skills/skills.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/about', pathMatch: 'full'},
-  {path: 'about',      component: AboutComponent},
-  {path: 'experience', component: ExperienceComponent},
-  {path: 'skills',     component: SkillsComponent},
+  {path: 'about',      component: AboutComponent, data: {title: 'About'}},
+  {path: 'experience', component: ExperienceComponent, data: {title: 'Experience'}},
+  {path: 'skills',     component: SkillsComponent, data: {title: 'Skills'}},
   {path: '**', redirectTo: '/about'}
 ];
 
