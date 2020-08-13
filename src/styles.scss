@@ -20,7 +20,13 @@ $custom-typography: mat-typography-config(
   $headline: mat-typography-level(5.25rem, 5rem, 700, $title-font),
   $title: mat-typography-level(2.5rem, 3rem, 500, $title-font),
   $subheading-2:  mat-typography-level(1.4rem, 28px, 400, $title-font),
-  $body-1: mat-typography-level(16px, 24px, 500)
+  $body-1: mat-typography-level(16px, 24px, 400),
+  $body-2: mat-typography-level(20px, 24px, 500)
 );
 
 @include mat-base-typography($custom-typography);
+
+.content-start {
+  padding-top: 70px;
+  padding-left: 40px;
+}

@@ -1,20 +1,41 @@
-<div fxFill>
+<div fxFill class="content-start">
   <h1 class="mat-headline">Skills</h1>
   <div fxLayout="row" fxLayoutAlign="start center">
-    <div class="spacer" fxFlex="10"></div>
-    <div fxFlex="50">
+    <div class="spacer" fxFlex="5"></div>
+    <div fxFlex="40">
       <div fxLayout="column" fxLayoutGap="20px">
         <div fxFlex="">
           <h2 class="mat-title">Languages</h2>
-          <div fxLayout="row">
+          <div fxLayout="row" class="skill-icons">
             <mat-icon *ngFor="let l of this.languages" svgIcon="{{l}}" matTooltip="{{l}}" fxFlex=""></mat-icon>
           </div>
         </div>
         <div fxFlex="">
           <h2>Tools and Frameworks</h2>
-          <div fxLayout="row">
+          <div fxLayout="row" class="skill-icons">
             <mat-icon *ngFor="let l of this.frameworks" svgIcon="{{l}}" matTooltip="{{l}}" fxFlex=""></mat-icon>
           </div>
+        </div>
+        <div fxFlex="">
+          <h2>Proficiencies</h2>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListIcon>arrow_forward_ios</mat-icon>
+              <h3 matLine>Agile Development & Scrum</h3>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>arrow_forward_ios</mat-icon>
+              <h3 matLine>Cross Functional & Remote Teams</h3>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>arrow_forward_ios</mat-icon>
+              <h3 matLine>Microservice development and deployment</h3>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListIcon>arrow_forward_ios</mat-icon>
+              <h3 matLine>Performance and scalability optimization</h3>
+            </mat-list-item>
+          </mat-list>
         </div>
       </div>
     </div>
