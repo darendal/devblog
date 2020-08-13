@@ -14,6 +14,8 @@ import {FlexModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import { GitchartComponent } from './gitchart/gitchart.component';
 import {NgxEchartsModule} from 'ngx-echarts';
+import {MatIconModule} from "@angular/material/icon";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import {NgxEchartsModule} from 'ngx-echarts';
         MatSidenavModule,
         MatListModule,
         MatDividerModule,
+        MatIconModule,
+        MatTooltipModule,
         FlexModule,
         NgxEchartsModule.forRoot({
           echarts: () => import('echarts')
