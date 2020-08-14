@@ -28,7 +28,7 @@
          *ngFor="let post of this.latestPosts | async"
          [routerLink]="'blog/posts/' + post.id"
          [routerLinkActive]="'active'" >
-        <span class="padding">{{post.title}}</span>
+        <div class="padding"></div><span>{{post.title}}</span>
       </a>
 
     </mat-nav-list>

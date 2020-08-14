@@ -1,7 +1,11 @@
-<div class="content-start">
+<div fxFill>
+  <div class="content-start">
+      <markdown [src]="(post | async).path" emoji class="post" fxFlex="60"></markdown>
+  </div>
   <div>
-    <div>
-        <markdown [src]="(post | async).path" emoji class="post" fxFlex="60"></markdown>
+    <div class="footer">
+      <div fxFill>
+      </div>
     </div>
   </div>
 </div>
