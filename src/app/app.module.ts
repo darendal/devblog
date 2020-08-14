@@ -18,6 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
+import {MarkdownModule} from "ngx-markdown";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ExperienceComponent,
     SkillsComponent,
     GitchartComponent,
-    SidebarComponent
+    SidebarComponent,
+    BlogComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -38,11 +43,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatDividerModule,
     MatIconModule,
     MatTooltipModule,
+    MatButtonModule,
     FlexModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
-    MatButtonModule
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
