@@ -20,7 +20,19 @@
       >
         <span>{{link.label}}</span>
       </a>
+      <a mat-list-item
+         [routerLink]="'blog'"
+         [routerLinkActive]="'active'"><span>Blog</span><mat-icon>keyboard_arrow_down</mat-icon>
+      </a>
+      <a mat-list-item
+         *ngFor="let post of this.latestPosts | async"
+         [routerLink]="'blog/posts/' + post.id"
+         [routerLinkActive]="'active'" >
+        <span class="padding">{{post.title}}</span>
+      </a>
+
     </mat-nav-list>
   </div>
+
 </div>
 

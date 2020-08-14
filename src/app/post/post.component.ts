@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {PostsService} from '../services/posts/posts.service';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Post} from '../models/Post';
 
 @Component({
   selector: 'app-post',
@@ -7,11 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  post: string;
-  constructor() { }
+  post: Observable<Post>;
+
+  constructor(private route: ActivatedRoute,
+              private postsService: PostsService) { }
 
   ngOnInit(): void {
-    this.post ='./assets/posts/rauTo-part0.md';
+    const postId = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.post = this.postsService.getPostById(postId);
   }
 
 }

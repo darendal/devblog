@@ -20,7 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
-import {MarkdownModule} from "ngx-markdown";
+import {MarkdownModule} from 'ngx-markdown';
 
 @NgModule({
   declarations: [

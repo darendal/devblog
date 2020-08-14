@@ -1,7 +1,7 @@
 <div class="content-start">
   <div>
     <div>
-        <markdown [src]="post" emoji class="post" fxFlex="60"></markdown>
+        <markdown [src]="(post | async).path" emoji class="post" fxFlex="60"></markdown>
     </div>
   </div>
 </div>
