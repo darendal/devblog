@@ -11,7 +11,7 @@ export class PostComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.post ='./assets/posts/test.md';
+    this.post ='./assets/posts/rauTo-part0.md';
   }
 
 }
