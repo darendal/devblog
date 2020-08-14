@@ -3,7 +3,7 @@ import {PostsService} from '../services/posts/posts.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Post} from '../models/Post';
-import {Title} from "@angular/platform-browser";
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
 
     this.post = this.postsService.getPostById(postId);
 
-    this.post.subscribe(p => this.titleService.setTitle(p.title))
+    this.post.subscribe(p => this.titleService.setTitle(p.title));
   }
 
 }
