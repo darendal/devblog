@@ -1,5 +1,5 @@
 <ng-container>
-  <div class = "big-screen-sidebar" fxHide.lt-sm="true" *ngIf="!(this.isScreenSmall$ | async) else small " >
+  <div class = "big-screen-sidebar" fxHide.lt-sm="true" *ngIf="(this.isScreenSmall$ | async) === false else small " >
     <mat-sidenav-container class="example-container">
       <mat-sidenav mode="side" opened class="example-sidenav"
                    [fixedInViewport]="true" [fixedTopGap]="0"

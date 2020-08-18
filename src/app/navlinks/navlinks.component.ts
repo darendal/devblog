@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NavLink} from "../models/NavLink";
-import {PostsService} from "../services/posts/posts.service";
-import {Observable} from "rxjs";
-import {Post} from "../models/Post";
+import {Component, OnInit} from '@angular/core';
+import {NavLink} from '../models/NavLink';
+import {PostsService} from '../services/posts/posts.service';
+import {Observable} from 'rxjs';
+import {Post} from '../models/Post';
 
 @Component({
   selector: 'app-navlinks',
@@ -17,7 +17,7 @@ export class NavlinksComponent implements OnInit {
     {path: 'skills', label: 'Skills', isActive: false}
   ];
 
-  latestPosts$: Observable<Post[]>
+  latestPosts$: Observable<Post[]>;
 
   constructor(private postsService: PostsService) { }
 

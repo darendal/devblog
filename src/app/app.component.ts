@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer, Title} from '@angular/platform-browser';
-import {NavLink} from './models/NavLink';
 import {LinkLogo} from './models/LinkLogo';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {debounceTime, filter, map, mergeMap, startWith} from 'rxjs/operators';
 import {Logo} from './models/Logo';
-import {fromEvent, Observable} from "rxjs";
+import {fromEvent, Observable} from 'rxjs';
 
 const staticLogos: Logo[] = [
   {id: 'angular', filename: 'angular.svg'},

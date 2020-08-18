@@ -21,8 +21,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import {MarkdownModule} from 'ngx-markdown';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavlinksComponent } from './navlinks/navlinks.component';
 
 @NgModule({
