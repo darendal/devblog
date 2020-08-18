@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer, Title} from '@angular/platform-browser';
-import {NavLink} from './models/NavLink';
 import {LinkLogo} from './models/LinkLogo';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {filter, map, mergeMap} from 'rxjs/operators';
+import {debounceTime, filter, map, mergeMap, startWith} from 'rxjs/operators';
 import {Logo} from './models/Logo';
+import {fromEvent, Observable} from 'rxjs';
 
 const staticLogos: Logo[] = [
   {id: 'angular', filename: 'angular.svg'},
@@ -38,11 +38,7 @@ export class AppComponent implements OnInit {
     {id: 'github', filename: 'github.svg', link: 'https://github.com/darendal'},
   ];
 
-  navLinks: NavLink[] = [
-    {path: 'about', label: 'About', isActive: true},
-    {path: 'experience', label: 'Experience', isActive: false},
-    {path: 'skills', label: 'Skills', isActive: false}
-  ];
+  isScreenSmall$: Observable<boolean>;
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer,
@@ -53,6 +49,16 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.enableTitleChange();
     this.loadLogos();
+
+    // Checks if screen size is less than 1024 pixels
+    const checkScreenSize = () => document.body.offsetWidth < 600;
+
+    // Create observable from window resize event throttled so only fires every 500ms
+    const screenSizeChanged$ = fromEvent(window, 'resize').pipe(debounceTime(500)).pipe(map(checkScreenSize));
+
+    // Start off with the initial value use the isScreenSmall$ | async in the
+    // view to get both the original value and the new value after resize.
+    this.isScreenSmall$ = this.isScreenSmall$ = screenSizeChanged$.pipe(startWith(checkScreenSize()));
   }
 
   enableTitleChange(): void {

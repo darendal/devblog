@@ -1,14 +1,34 @@
 <ng-container>
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
-                 [fixedInViewport]="true" [fixedTopGap]="0"
-                 [fixedBottomGap]="0">
-    <app-sidebar [routes]="navLinks" [logos]="logos"></app-sidebar>
-    </mat-sidenav>
-    <mat-sidenav-content fxFill>
-      <div fxFlex class="content">
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <div class = "big-screen-sidebar" fxHide.lt-sm="true" *ngIf="(this.isScreenSmall$ | async) === false else small " >
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav mode="side" opened class="example-sidenav"
+                   [fixedInViewport]="true" [fixedTopGap]="0"
+                   [fixedBottomGap]="0">
+        <app-sidebar [logos]="logos"></app-sidebar>
+      </mat-sidenav>
+      <mat-sidenav-content fxFill>
+        <div fxFlex class="content">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  <ng-template #small>
+    <mat-toolbar>
+      <button mat-icon-button (click)="smallnav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav #smallnav mode="over" class="example-sidenav">
+        <app-navlinks></app-navlinks>
+      </mat-sidenav>
+      <mat-sidenav-content fxFill>
+        <div fxFlex class="content">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-template>
+
 </ng-container>
