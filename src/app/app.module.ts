@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
 import {MatDividerModule} from '@angular/material/divider';
-import {FlexModule} from '@angular/flex-layout';
+import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import { GitchartComponent } from './gitchart/gitchart.component';
 import {NgxEchartsModule} from 'ngx-echarts';
@@ -21,6 +21,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import {MarkdownModule} from 'ngx-markdown';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { NavlinksComponent } from './navlinks/navlinks.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import {MarkdownModule} from 'ngx-markdown';
     GitchartComponent,
     SidebarComponent,
     BlogComponent,
-    PostComponent
+    PostComponent,
+    NavlinksComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,10 @@ import {MarkdownModule} from 'ngx-markdown';
     MatIconModule,
     MatTooltipModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
     FlexModule,
+    FlexLayoutModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),

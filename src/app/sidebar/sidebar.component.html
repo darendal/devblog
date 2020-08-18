@@ -10,29 +10,6 @@
     </div>
   </div>
   <hr/>
-  <div class="nav-links dark-theme">
-    <mat-nav-list>
-      <a mat-list-item
-         *ngFor="let link of this.routes"
-         [routerLink]="link.path"
-         [routerLinkActive]="'active'"
-         [routerLinkActiveOptions]="{exact: true}"
-      >
-        <span>{{link.label}}</span>
-      </a>
-      <a mat-list-item
-         [routerLink]="'blog'"
-         [routerLinkActive]="'active'"><span>Blog</span><mat-icon>keyboard_arrow_down</mat-icon>
-      </a>
-      <a mat-list-item
-         *ngFor="let post of this.latestPosts | async"
-         [routerLink]="'blog/posts/' + post.id"
-         [routerLinkActive]="'active'" >
-        <div class="padding"></div><span>{{post.title}}</span>
-      </a>
-
-    </mat-nav-list>
-  </div>
-
+  <app-navlinks></app-navlinks>
 </div>
 

@@ -38,12 +38,6 @@ export class AppComponent implements OnInit {
     {id: 'github', filename: 'github.svg', link: 'https://github.com/darendal'},
   ];
 
-  navLinks: NavLink[] = [
-    {path: 'about', label: 'About', isActive: true},
-    {path: 'experience', label: 'Experience', isActive: false},
-    {path: 'skills', label: 'Skills', isActive: false}
-  ];
-
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer,
               private router: Router,

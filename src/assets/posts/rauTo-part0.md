@@ -32,6 +32,7 @@ rau/
     └── main.rs
 ```
 
+
 ### Accepting User Input (Clap your hands)
 
 To start, we'll need to accept a few basic inputs from our user. At a minimum, we'll need to know:
@@ -166,6 +167,6 @@ fn subcommand_tar(args: &ArgMatches) -> () {
 
 ### Wrapping Up
 
-So far, we've got a basic shell in place to accept user input, and we can easily extend it to add additional functionality as our utility grows. We've still got a long way to go before we're writing tarballs, but we have to start somewhere!
+So far, we've got a basic shell in place to accept user input, and we can easily extend it to add additional functionality as our utility grows. Right now, if you run `cargo run -- tar -i test.txt`, all that will happen is the filename you entered will get printed to the console. A lot of work for not a lot of payoff 
 
 Next time, we'll be adding a new library to hold all our business logic, and take a look at the structure of a tarfile.
