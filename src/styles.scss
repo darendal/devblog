@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 @import '~@angular/material/theming';
+@import '~prismjs/themes/prism.css';
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
 @include mat-core();
 
 $dark-primary: mat-palette($mat-blue-grey);
